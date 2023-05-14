@@ -1,12 +1,15 @@
+/* eslint-env node */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
@@ -21,6 +24,7 @@ module.exports = {
     clean: true,
   },
   plugins: [
+    new ESLintPlugin(),
     new HtmlWebpackPlugin({
       title: 'Lines and Veils Parser',
     }),
