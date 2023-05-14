@@ -1,9 +1,5 @@
-import * as React from "react"
+import * as React from "react";
 
-export default function App(){
-    return (
-        <h1>
-            Hello World!
-        </h1>
-        )
+export default function App() {
+  return <h1>Hello World!</h1>;
 }
